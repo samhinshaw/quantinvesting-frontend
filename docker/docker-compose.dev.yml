@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  # Start Webpack. This just operates on the `public/src` to generate
+  # `public/dist`, which is served by the backend, so no port exposure is
+  # necessary. We're running webpack in watch mode, not the webpack dev server.
+  # Since we've bind mounted our codebase into both containers, the changes will
+  # be reflected live for our backend container.
+  ui:
+    # Build the Dockerfile in the docker/list folder, but build it with the
+    # "working directory" (the context) set to the root of the repository so we
+    # have access to the full source code.
+    build: 
+      context: ../
+      dockerfile: docker/list/Dockerfile
+    image: list:latest
+    container_name: list_ui
+    # Set the NODE_ENV to the dev environment
+    environment:
+      - NODE_ENV=development
+    command: ['npm', 'run', 'dev:ui']
+    ports:
+      - "1234:1234"
+    # Mount the codebase to the container for live-reloading
+    volumes:
+      - ../:/app/
+      # Mount nothing to the node_modules folder so that the results of the
+      # image build do not get overwritten. (Trailing slash important.) This SO
+      # post contains a few different techniques for tackling this problem, as
+      # well as the solution I've used here:
+      # https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
+      - /app/node_modules/

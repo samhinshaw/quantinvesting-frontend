@@ -1,0 +1,20 @@
+{
+  "name": "list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "scripts": {
+    "dev:ui": "parcel src/index.html",
+    "build:ui": "docker-compose -f docker/docker-compose.dev.yml build",
+    "run:ui": "docker-compose -f docker/docker-compose.dev.yml up"
+  },
+  "author": "Sam Hinshaw",
+  "license": "ISC"
+}
