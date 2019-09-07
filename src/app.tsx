@@ -1,8 +1,9 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
+import Background from './background';
 
 function App() {
-  return <h1>List</h1>;
+  return <Background />;
 }
 
 const hotModule = hot(module);
