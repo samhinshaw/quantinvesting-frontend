@@ -10,10 +10,6 @@
     "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }]
   },
   "parser": "@typescript-eslint/parser",
-  "env": {
-    "node": true,
-    "jasmine": true
-  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
