@@ -1,0 +1,24 @@
+{
+  "jshint.enable": false,
+  "typescriptHero.resolver.organizeOnSave": true,
+  "typescriptHero.resolver.organizeSortsByFirstSpecifier": true,
+  "search.exclude": {
+    "**/*/bower_components": true,
+    "**/*/coverage": true,
+    "**/*/node_modules": true,
+    "dist": true
+  },
+  "eslint.enable": true,
+  "javascript.validate.enable": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  "editor.tabSize": 2,
+  "prettier.eslintIntegration": true,
+  "prettier.tslintIntegration": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "docthis.includeMemberOfOnClassMembers": false,
+  "docthis.includeMemberOfOnInterfaceMembers": false,
+  "typescript.format.enable": true,
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "json"],
+  "eslint.autoFixOnSave": true
+}
