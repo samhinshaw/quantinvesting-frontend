@@ -10,7 +10,7 @@ services:
     # Build the Dockerfile in the docker/list folder, but build it with the
     # "working directory" (the context) set to the root of the repository so we
     # have access to the full source code.
-    build: 
+    build:
       context: ../
       dockerfile: docker/list/Dockerfile
     image: list:latest
@@ -18,9 +18,11 @@ services:
     # Set the NODE_ENV to the dev environment
     environment:
       - NODE_ENV=development
+      # Tell Parcel how to listen for fs changes in volume-mount
+      - CHOKIDAR_USEPOLLING=1
     command: ['npm', 'run', 'dev:ui']
     ports:
-      - "1234:1234"
+      - '1234:1234'
     # Mount the codebase to the container for live-reloading
     volumes:
       - ../:/app/
