@@ -1,13 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { APPLICATION_TITLE } from '../title.const';
+import { DARK_GRAY } from '../style-guide/colors.const';
+import { APP_SANS_SERIF } from '../style-guide/fonts.const';
+
 // Create a Title component that'll render an <h1> tag with some styles
 const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
+  text-align: center
+  font-family: ${APP_SANS_SERIF};
+  color: ${DARK_GRAY};
+  margin: 0;
 `;
 
-export default function header() {
-  return <Title>L1st</Title>;
+const TopSection = styled.div`
+  margin: 0.5em 1em;
+`;
+
+export default function Header() {
+  return (
+    <TopSection>
+      <Title>{APPLICATION_TITLE}</Title>
+    </TopSection>
+  );
 }
