@@ -1,17 +1,13 @@
 {
   "compileOnSave": false,
 
-    "compilerOptions": {
-              "sourceMap": true,
-
+  "compilerOptions": {
+    "sourceMap": true,
     "esModuleInterop": true,
     "target": "es6",
     "lib": ["es2017", "dom"],
-            "jsx": "react",
-                    "module": "commonjs",
-                            "noImplicitAny": true,
-
-
-
-    }
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitAny": true
+  }
 }
