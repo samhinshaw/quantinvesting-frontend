@@ -12,8 +12,9 @@
   },
   "scripts": {
     "dev:ui": "parcel src/index.html",
-    "build:ui": "docker-compose -f docker/docker-compose.dev.yml build",
-    "run:ui": "docker-compose -f docker/docker-compose.dev.yml up"
+    "build:ui": "parcel build src/index.html",
+    "build:docker:ui": "docker-compose -f docker/docker-compose.dev.yml build",
+    "run:docker:ui": "docker-compose -f docker/docker-compose.dev.yml up"
   },
   "author": "Sam Hinshaw",
   "license": "ISC"
