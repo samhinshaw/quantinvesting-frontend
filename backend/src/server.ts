@@ -1,9 +1,15 @@
 import express from 'express';
-import items from './mock-user-data/items.json';
 import { BACKEND_PORT } from '../../shared/constants/backend';
 import cors from 'cors';
+import { ListItem } from 'shared/models/list-item.js';
+import { MOCK_DATABASE } from './mock-user-data/items';
 
 const app = express();
+
+function mockFetchUserItems(userID: string): ListItem[] {
+  const { items } = MOCK_DATABASE[userID];
+  return items;
+}
 
 // Only allow CORS in development
 if (process.env.NODE_ENV === 'development') {
@@ -12,8 +18,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.get('/api/items/:id', (req, res) => {
-  console.log(req.params);
-  const requestedUserItems = items['1'];
+  const requestedUserItems = mockFetchUserItems(req.params.id);
   res.json(requestedUserItems);
 });
 

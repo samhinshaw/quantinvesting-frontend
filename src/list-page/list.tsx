@@ -27,7 +27,6 @@ export default class List extends React.Component<IProps, IState> {
 
   async componentDidMount() {
     const { data: userListItems } = await axios.get<ListItem[]>(`${queryUrl}/${this.props.userId}`);
-    console.log(userListItems);
     this.setState({
       listItems: userListItems
     });
@@ -36,8 +35,9 @@ export default class List extends React.Component<IProps, IState> {
   render() {
     return (
       <Main>
+        {console.log(this.state.listItems)}
         {this.state.listItems.map(listItem => (
-          <Card listItem={listItem}></Card>
+          <Card listItem={listItem} key={listItem.id}></Card>
         ))}
       </Main>
     );
