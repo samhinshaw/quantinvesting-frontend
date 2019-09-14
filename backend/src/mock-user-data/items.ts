@@ -11,12 +11,13 @@ export const MOCK_DATABASE: MockDatabase = {
     items: [
       {
         id: 0,
-        text: 'adopt a cat',
+        title: 'adopt a cat',
         ranking: 1
       },
       {
         id: 1,
-        text: 'buy ice cream',
+        title: 'buy ice cream',
+        description: "let's walk to rain or shine for taco tuesday",
         ranking: 2
       }
     ]
@@ -25,12 +26,13 @@ export const MOCK_DATABASE: MockDatabase = {
     items: [
       {
         id: 3,
-        text: 'adopt a dog',
+        title: 'adopt a dog',
         ranking: 1
       },
       {
         id: 4,
-        text: 'buy ice cream',
+        title: 'buy ice cream',
+        description: "pick up a pint of Ben & Jerry's",
         ranking: 2
       }
     ]

@@ -1,5 +1,6 @@
 export interface ListItem {
   id: number;
-  text: string;
+  title: string;
+  description?: string;
   ranking: number;
 }
