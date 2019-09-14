@@ -12,10 +12,11 @@ const CardBox = styled.div`
 `;
 
 const Title = styled.h3`
-  top: 10px;
+  top: 5px;
   left: 10px;
   font-family: ${APP_SANS_SERIF};
   color: ${DARK_GRAY};
+  position: relative;
 `;
 
 const Description = styled.p`
