@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ListItem } from 'models/list-item';
+import { ListItem } from 'shared/models/list-item';
 
 const CardBox = styled.div``;
 

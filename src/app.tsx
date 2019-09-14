@@ -13,11 +13,13 @@ const Background = styled.div`
   position: absolute;
 `;
 
+const MOCK_USERID = 1;
+
 function App() {
   return (
     <Background>
       <Header></Header>
-      <List></List>
+      <List userId={MOCK_USERID}></List>
     </Background>
   );
 }

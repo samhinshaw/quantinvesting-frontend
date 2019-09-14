@@ -1,11 +1,15 @@
 import express from 'express';
 import items from './mock-user-data/items.json';
-const app = express();
-const port = 9924;
+import { BACKEND_PORT } from '../../shared/constants/backend';
+import cors from 'cors';
 
-app.get('/', (req, res) => {
-  res.sendFile('../../dist/index.html');
-});
+const app = express();
+
+// Only allow CORS in development
+if (process.env.NODE_ENV === 'development') {
+  console.log('enabling cors');
+  app.use(cors());
+}
 
 app.get('/api/items/:id', (req, res) => {
   console.log(req.params);
@@ -13,6 +17,4 @@ app.get('/api/items/:id', (req, res) => {
   res.json(requestedUserItems);
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}!`);
-});
+app.listen(BACKEND_PORT, () => console.log(`backend started on port ${BACKEND_PORT}`));

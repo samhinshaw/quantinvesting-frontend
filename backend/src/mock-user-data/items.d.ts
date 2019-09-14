@@ -1,4 +1,4 @@
-import { ListItem } from 'models/list-item';
+import { ListItem } from 'shared/models/list-item';
 
 declare module 'items.json' {
   const value: {

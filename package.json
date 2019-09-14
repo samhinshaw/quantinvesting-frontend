@@ -4,32 +4,42 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev:ui": "parcel serve src/index.html",
+    "dev:ui": "NODE_ENV=development parcel serve src/index.html",
     "build:ui": "parcel build src/index.html",
     "build:docker:dev": "docker-compose -f docker/docker-compose.dev.yml build",
     "up:docker:dev": "docker-compose -f docker/docker-compose.dev.yml up",
     "down:docker:dev": "docker-compose -f docker/docker-compose.dev.yml down",
     "lint:ts": "tslint --config tslint.json --project tsconfig.json",
     "build:backend": "tsc --build backend/tsconfig.json",
-    "dev:backend": "ts-node --project backend/tsconfig.json backend/src/server.ts",
+    "dev:backend": "NODE_ENV=development nodemon",
     "start": "node backend/dist/server.js"
   },
   "alias": {
     "react-dom": "@hot-loader/react-dom"
   },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 iOS versions"
+  ],
   "dependencies": {
     "@hot-loader/react-dom": "^16.9.0",
     "app": "^0.1.0",
     "axios": "^0.19.0",
     "containers": "0.0.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-hot-loader": "^4.12.12",
     "sanitize.css": "^11.0.0",
+    "shared": "^0.2.0",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.1",
     "@types/parcel-bundler": "^1.12.1",
     "@types/parcel-env": "0.0.0",
@@ -47,6 +57,7 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "nodemon": "^1.19.2",
     "parcel-bundler": "^1.12.3",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
