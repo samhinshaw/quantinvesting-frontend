@@ -8,8 +8,7 @@
     "jsx": "react",
     "module": "commonjs",
     "noImplicitAny": true,
-    "outDir": "./dist",
-    "baseUrl": "./"
+    "outDir": "./dist"
   },
   "include": ["src/**/*", "shared/**/*"]
 }

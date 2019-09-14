@@ -1,4 +1,4 @@
-import { ListItem } from 'shared/models/list-item';
+import { ListItem } from '../../../shared/models/list-item';
 
 interface MockDatabase {
   [key: string]: {

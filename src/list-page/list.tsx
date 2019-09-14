@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ListItem } from 'shared/models/list-item';
 import Card from './components/card';
 import axios from 'axios';
 import { API_URL } from '../../shared/constants/backend';
+import { ListItem } from '../../shared/models/list-item';
 
 const Main = styled.div``;
 

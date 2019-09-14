@@ -1,8 +1,8 @@
 import express from 'express';
 import { BACKEND_PORT } from '../../shared/constants/backend';
 import cors from 'cors';
-import { ListItem } from 'shared/models/list-item.js';
 import { MOCK_DATABASE } from './mock-user-data/items';
+import { ListItem } from '../../shared/models/list-item';
 
 const app = express();
 
