@@ -3,6 +3,7 @@ import { hot } from 'react-hot-loader';
 import styled from 'styled-components';
 import Header from './home-page/header';
 import { BACKGROUND_OFF_WHITE } from './style-guide/colors.const';
+import List from './list-page/list';
 
 // Create a Title component that'll render an <h1> tag with some styles
 const Background = styled.div`
@@ -16,6 +17,7 @@ function App() {
   return (
     <Background>
       <Header></Header>
+      <List></List>
     </Background>
   );
 }

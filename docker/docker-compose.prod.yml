@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  backend:
+    # We've already built this once, so just reuse the image we built for the UI container
+    image: list:latest
+    container_name: list_backend
+    # Set the NODE_ENV to the dev environment
+    environment:
+      - NODE_ENV=production
+    command: ['npm', 'start']
+    ports:
+      - '9924:9924'
