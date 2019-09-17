@@ -5,7 +5,12 @@ import axios from 'axios';
 import { API_URL } from '../../shared/constants/backend';
 import { ListItem } from '../../shared/models/list-item';
 
-const Main = styled.div``;
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
 
 const queryUrl = `${API_URL}/api/items`;
 
