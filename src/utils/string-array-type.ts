@@ -4,8 +4,8 @@
  * @export
  * @template L
  * @param {L[]} arr
- * @returns
+ * @returns {L[]}
  */
-export function stringLitArray<L extends string>(arr: L[]) {
+export default function stringLitArray<L extends string>(arr: L[]): L[] {
   return arr;
 }
