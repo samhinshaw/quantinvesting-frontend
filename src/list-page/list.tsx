@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Card from './components/card';
 import axios from 'axios';
-import { API_URL } from '../../shared/constants/backend';
-import { ListItem } from '../../shared/models/list-item';
 
 const Main = styled.div`
   display: flex;
@@ -12,14 +10,14 @@ const Main = styled.div`
   justify-content: space-between;
 `;
 
-const queryUrl = `${API_URL}/api/items`;
+const queryUrl = `api/items`;
 
 interface IProps {
   userId: number;
 }
 
 interface IState {
-  listItems: ListItem[];
+  listItems: any[];
 }
 
 export default class List extends React.Component<IProps, IState> {
@@ -31,7 +29,7 @@ export default class List extends React.Component<IProps, IState> {
   }
 
   async componentDidMount() {
-    const { data: userListItems } = await axios.get<ListItem[]>(`${queryUrl}/${this.props.userId}`);
+    const { data: userListItems } = await axios.get<any>(`${queryUrl}/${this.props.userId}`);
     this.setState({
       listItems: userListItems
     });

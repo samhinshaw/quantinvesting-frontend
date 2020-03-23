@@ -8,7 +8,7 @@ import { APPLICATION_TITLE } from './title.const';
 // get the dom element to mount our application at
 const appMountPoint = document.getElementById('app');
 
-const render = () => {
+const render = (): void => {
   document.title = APPLICATION_TITLE;
   ReactDOM.render(<App />, appMountPoint);
 };

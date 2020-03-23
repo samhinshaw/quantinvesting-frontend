@@ -1,1 +1,1 @@
-export const APPLICATION_TITLE = 'l1st';
+export const APPLICATION_TITLE = 'QuantInvesting';
